@@ -227,6 +227,12 @@ ol {
   gap: 16px;
 }
 
+.widget p {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 4px;
+}
+
 .widget .color {
   font-weight: 400;
   font-size: 16px;
