@@ -8,17 +8,15 @@ const boxes = document.querySelector('#boxes');
 const inputNumbers = document.querySelector('#controls input');
 const createBtn = document.querySelector('#controls button[data-create]');
 const destroyBtn = document.querySelector('#controls button[data-destroy]');
-const defaultBoxSize = 30;
+
 function createBoxes(amount) {
   destroyBoxes();
+  let setOfBoxes = '';
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    const newBoxSize = defaultBoxSize + i * 10;
-    box.style.width = `${newBoxSize}px`;
-    box.style.height = `${newBoxSize}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxes.append(box);
+    const boxSize = 30 + i * 10;
+    setOfBoxes += `<div style="width: ${boxSize}px; height: ${boxSize}px; background-color: ${getRandomHexColor()}"></div>`;
   }
+  boxes.insertAdjacentHTML('beforeend', setOfBoxes);
 }
 function destroyBoxes() {
   boxes.innerHTML = '';
